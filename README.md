@@ -8,22 +8,36 @@ On Ubuntu 22.04.2, max have 67G disk space for you workspace, use this action.
 
 
 ## Example
-```
+
 before:
 
-![before](https://github.com/gmij/max-build-space/assets/22893579/0a554dfa-7b4d-48f8-961d-98e10a6a73b2)
+![before](https://github.com/gmij/max-build-space/assets/22893579/0a554dfa-7b4d-48f8-961d-98e10a6a73b2?raw=true)
 
 
+use action:
+
+``` yml
+
+    - name: Maximize build space
+      uses: gmij/max-build-space@main
+      with:
+        root-reserve-mb: 512
+        swap-size-mb: 1024
+        remove-android: 'true'
+        remove-haskell: 'true'
+        remove-docker-images: 'true'
+        remove-codeql: 'true'
+        remove-large-packages: 'true'
+
+```
 after:
 
 ![after](https://github.com/gmij/max-build-space/assets/22893579/45bdc2f6-c722-4b1c-8cef-0a6272c29785)
 
 
 
-```
-
 ## Usage
-```
+``` yml
 
 name: My build action requiring more space
 on: push
@@ -51,7 +65,7 @@ jobs:
 
 ## Inputs
 
-```
+``` yml
 
   root-reserve-mb:
     description: 'Space to be left free on the root filesystem, in Megabytes.'
