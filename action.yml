@@ -1,4 +1,4 @@
-name: 'Max-build-disk-space'
+name: 'A.Max-build-disk-space'
 description: 'Maximize the available disk space for your build job'
 branding:
   icon: 'crop'
