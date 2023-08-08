@@ -11,11 +11,13 @@ On Ubuntu 22.04.2, max have 67G disk space for you workspace, use this action.
 ```
 before:
 
-![image](https://github.com/gmij/max-build-space/assets/22893579/a50ef1ae-e6e6-40a0-a765-60d89a672e1a)
+![before](https://github.com/gmij/max-build-space/assets/22893579/0a554dfa-7b4d-48f8-961d-98e10a6a73b2)
+
 
 after:
 
-![image](https://github.com/gmij/max-build-space/assets/22893579/b5fea3b8-8fe1-4c4c-abde-e674c68b2ef0)
+![after](https://github.com/gmij/max-build-space/assets/22893579/45bdc2f6-c722-4b1c-8cef-0a6272c29785)
+
 
 
 ```
