@@ -70,6 +70,7 @@ jobs:
 
 ``` yml
 
+inputs:
   root-reserve-mb:
     description: 'Space to be left free on the root filesystem, in Megabytes.'
     required: false
@@ -90,34 +91,39 @@ jobs:
     required: false
     default: 'false'
   build-mount-path:
-    description: 'Absolute path to the mount point where the build space will be available, defaults to $GITHUB_WORKSPACE if unset.'
+    description: |
+      'Absolute path to the mount point where the build space will be available,
+      defaults to $GITHUB_WORKSPACE if unset.'
     required: false
   pv-loop-path:
-    description: 'Absolute file path for the LVM image created on the root filesystem, the default is usually fine.'
+    description: |
+      'Absolute file path for the LVM image created on the root filesystem, the default is usually fine.'
     required: false
     default: '/pv.img'
   tmp-pv-loop-path:
-    description: 'Absolute file path for the LVM image created on the temp filesystem, the default is usually fine. Must reside on /mnt'
+    description: |
+      'Absolute file path for the LVM image created on the temp filesystem,
+      the default is usually fine. Must reside on /mnt'
     required: false
     default: '/mnt/tmp-pv.img'
   remove-dotnet:
-    description: 'Removes .NET runtime and libraries.'
+    description: 'Removes .NET runtime and libraries. (frees ~17 GB)'
     required: false
     default: 'false'
   remove-android:
-    description: 'Removes Android SDKs and Tools.'
+    description: 'Removes Android SDKs and Tools. (frees ~11 GB)'
     required: false
     default: 'false'
   remove-haskell:
-    description: 'Removes GHC (Haskell) artifacts.'
+    description: 'Removes GHC (Haskell) artifacts. (frees ~2.7 GB)'
     required: false
     default: 'false'
   remove-codeql:
-    description: 'Removes CodeQL Action Bundles.'
+    description: 'Removes CodeQL Action Bundles. (frees ~5.4 GB)'
     required: false
     default: 'false'
   remove-docker-images:
-    description: 'Removes cached Docker images.'
+    description: 'Removes cached Docker images. (frees ~3 GB)'
     required: false
     default: 'false'
   # option inspired by:
@@ -126,5 +132,9 @@ jobs:
     description: 'Removes large packages. (frees ~4.6 GB)'
     required: false
     default: 'false'
+  remove-tool-cache:
+    description: 'Removes tool cache. (frees ~3 GB)'
+    required: false
+    default: 'false'    
 
 ```
