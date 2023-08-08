@@ -111,7 +111,7 @@ runs:
           if [[ ${{ inputs.remove-docker-images }} == 'true' ]]; then
             echo -n "docker "
           fi
-          if [[ ${{ inputs.large-packages }} == 'true' ]]; then
+          if [[ ${{ inputs.remove-large-packages }} == 'true' ]]; then
             echo -n "large-packages "
           fi
           echo
