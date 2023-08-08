@@ -7,6 +7,19 @@ Added [maximize-build-disk-space](https://github.com/jlumbroso/free-disk-space) 
 On Ubuntu 22.04.2, max have 67G disk space for you workspace, use this action.
 
 
+## Example
+```
+before:
+
+![image](https://github.com/gmij/max-build-space/assets/22893579/a50ef1ae-e6e6-40a0-a765-60d89a672e1a)
+
+after:
+
+![image](https://github.com/gmij/max-build-space/assets/22893579/b5fea3b8-8fe1-4c4c-abde-e674c68b2ef0)
+
+
+```
+
 ## Usage
 ```
 
