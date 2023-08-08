@@ -1,5 +1,5 @@
-name: 'A.Max-build-disk-space'
-description: 'Maximize the available disk space for your build job'
+name: 'Max build disk space(Ubuntu)'
+description: 'Maximize the Ubuntu Runner available disk space for your build job'
 branding:
   icon: 'crop'
   color: 'orange'
