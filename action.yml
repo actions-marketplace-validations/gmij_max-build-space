@@ -60,6 +60,10 @@ inputs:
     description: 'Removes large packages. (frees ~4.6 GB)'
     required: false
     default: 'false'
+  remove-tool-cache:
+    description: 'Removes tool cache. (frees ~6 GB)'
+    required: false
+    default: 'false'    
 runs:
   using: "composite"
   steps:
@@ -114,6 +118,9 @@ runs:
           if [[ ${{ inputs.remove-large-packages }} == 'true' ]]; then
             echo -n "large-packages "
           fi
+          if [[ ${{ inputs.remove-tool-cache }} == 'true' ]]; then
+            echo -n "tool-caches "
+          fi
           echo
 
           echo "Removing unwanted software... "
@@ -140,6 +147,11 @@ runs:
             sudo apt-get remove -y azure-cli google-cloud-sdk google-chrome-stable firefox powershell mono-devel libgl1-mesa-dri
             sudo apt-get autoremove -y
             sudo apt-get clean
+          fi
+          # Option: Remove tool cache
+          # REF: https://github.com/actions/virtual-environments/issues/2875#issuecomment-1163392159
+          if [[ ${{ inputs.remove-tool-cache }} == 'true' ]]; then
+            sudo rm -rf "$AGENT_TOOLSDIRECTORY"
           fi
           echo "... done"
 
